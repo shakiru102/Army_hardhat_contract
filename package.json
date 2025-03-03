@@ -1,0 +1,22 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@matterlabs/hardhat-zksync": "^1.3.0",
+    "@matterlabs/zksync-contracts": "^0.6.1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "ethers": "^6.13.5",
+    "hardhat": "^2.22.18",
+    "zksync-ethers": "^6.16.0"
+  },
+  "scripts": {
+    "compile:testnet": "npx hardhat compile --network abstractTestnet",
+    "compile:mainnet": "npx hardhat compile --network abstractMainnet",
+    "set:privatekey": "npx hardhat vars set DEPLOYER_PRIVATE_KEY",
+    "deploy:testnet": "npx hardhat deploy-zksync --script deploy.ts --network abstractTestnet",
+    "deploy:mainnet": "npx hardhat deploy-zksync --script deploy.ts --network abstractMainnet",
+    "verify": "node verify.js"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0"
+  }
+}
